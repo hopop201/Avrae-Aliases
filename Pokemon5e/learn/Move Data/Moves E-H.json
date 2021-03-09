@@ -2620,11 +2620,6 @@
           "miss": [],
           "type": "attack"
         }],
-        "meta": [{
-          "dice": "DAMAGE",
-          "name": "Prone",
-          "type": "roll"
-        }],
         "target": "each",
         "type": "target"
       }, {
@@ -3747,7 +3742,7 @@
         "effects": [{
           "attackBonus": "ATTACK",
           "hit": [{
-            "damage": "DAMAGE [Normal]",
+            "damage": "DAMAGE+{SMO} [Normal]",
             "overheal": false,
             "type": "damage"
           }, {
@@ -3755,7 +3750,7 @@
             "fail": [{
               "conc": false,
               "desc": null,
-              "duration": "{Rounds}",
+              "duration": "3",
               "effects": "",
               "end": true,
               "name": "Prone",
@@ -3765,28 +3760,23 @@
             "success": [],
             "type": "save"
           }],
-          "meta": [{
-            "dice": "1d4",
-            "name": "Rounds",
-            "type": "roll"
-          }],
           "miss": [],
           "type": "attack"
         }],
         "target": "each",
         "type": "target"
       }, {
-        "text": "You strike at an enemy with your horn. Make a melee attack, doing 1d10 + MOVE normal damage on a hit. If you moved 20 feet or more towards an enemy on this turn, force the enemy to make a STR save against your Move DC or be knocked prone. Higher Levels: The damage dice roll for this move changes to 2d8 at level 5, 5d4 at level 10, and 4d8 at level 17.",
+        "text": "You strike at a target with your horn. Make a melee attack, doing 1d10 + MOVE normal damage on a hit. If you moved 20 feet or more towards the target on this turn, force the creature to make a STR save against your Move DC or be knocked prone.",
         "type": "text"
       }],
       "name": "Horn Attack",
       "proper": true
     },
     "damage": {
-      "1": "1d10+{SMO}",
-      "5": "2d8+{SMO}",
-      "10": "5d4+{SMO}",
-      "17": "4d8+{SMO}"
+      "1": "1d10",
+      "5": "2d8",
+      "10": "5d4",
+      "17": "4d8"
     },
     "PP": 15
   },
@@ -3876,12 +3866,12 @@
         "effects": [{
           "attackBonus": "ATTACK",
           "hit": [{
-            "damage": "DAMAGE [Flying]",
+            "damage": "DAMAGE+{max(SMO,DMO)} [Flying]",
             "overheal": false,
             "type": "damage"
           }, {
             "desc": "",
-            "duration": "{Rounds}",
+            "duration": "3",
             "effects": "",
             "end": true,
             "name": "Confused",
@@ -3890,16 +3880,10 @@
           "miss": [],
           "type": "attack"
         }],
-        "meta": [{
-          "dice": "1d4",
-          "hidden": false,
-          "name": "Rounds",
-          "type": "roll"
-        }],
         "target": "each",
         "type": "target"
       }, {
-        "text": "You wrap an opponent in a fierce wind. Make a ranged attack against a target, dealing 3d6 + MOVE flying damage on a hit. If this attack is activated during rain, roll the attack with advantage. If used during harsh sunlight, roll the attack with disadvantage. If the natural attack roll is 15 or higher, the target becomes confused.",
+        "text": "You wrap a target in a fierce wind. Make a ranged attack against a target, dealing 3d6 + MOVE flying damage on a hit. If this attack is activated during rain, roll the attack with advantage. If used during harsh sunlight, roll the attack with disadvantage. If the natural attack roll is 15 or higher, the target becomes confused.",
         "type": "text"
       }],
       "name": "Hurricane",
@@ -3907,10 +3891,10 @@
       "verb": null
     },
     "damage": {
-      "1": "3d6+{max(SMO,DMO)}",
-      "5": "3d8+{max(SMO,DMO)}",
-      "10": "6d6+{max(SMO,DMO)}",
-      "17": "7d8+{max(SMO,DMO)}"
+      "1": "3d6",
+      "5": "3d8",
+      "10": "6d6",
+      "17": "7d8"
     },
     "PP": 5
   },
